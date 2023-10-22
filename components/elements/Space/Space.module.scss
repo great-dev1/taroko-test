@@ -1,0 +1,59 @@
+@import 'variables', 'mixins';
+
+.root {
+  display: flex;
+
+  // Wrap
+
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  &.flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  // Direction styles
+  &.direction-row {
+    flex-direction: row;
+  }
+
+  &.direction-column {
+    flex-direction: column;
+  }
+
+  // Gutter styles
+  @each $s in map-keys($spacing-map) {
+    &.gutter-#{$s} {
+      &.direction-row {
+        > .item:not(:last-of-type) {
+          margin-right: map-get($spacing-map, $s);
+        }
+      }
+
+      &.direction-column {
+        > .item:not(:last-of-type) {
+          margin-bottom: map-get($spacing-map, $s);
+        }
+      }
+    }
+  }
+
+  @each $a in map-keys($align-map) {
+    &.align-#{$a} {
+      align-items: map-get($align-map, $a);
+    }
+  }
+
+  @each $j in map-keys($justify-map) {
+    &.justify-#{$j} {
+      justify-content: map-get($justify-map, $j);
+    }
+  }
+}
+
+.item {
+  max-width: 100%;
+  min-width: 0;
+  line-height: 0;
+}

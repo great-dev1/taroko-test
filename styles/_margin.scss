@@ -1,0 +1,61 @@
+@import 'variables', 'mixins';
+
+@each $s in map-keys($spacing-map) {
+  .m-#{$s} {
+    margin: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .mx-#{$s} {
+    margin-left: map-get($spacing-map, $s);
+    margin-right: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .my-#{$s} {
+    margin-top: map-get($spacing-map, $s);
+    margin-bottom: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .ml-#{$s} {
+    margin-left: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .mt-#{$s} {
+    margin-top: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .mr-#{$s} {
+    margin-right: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .mb-#{$s} {
+    margin-bottom: map-get($spacing-map, $s);
+  }
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}

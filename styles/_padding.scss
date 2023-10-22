@@ -1,0 +1,79 @@
+@import 'variables', 'mixins';
+
+@each $s in map-keys($spacing-map) {
+  .p-#{$s} {
+    padding: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .px-#{$s} {
+    padding-left: map-get($spacing-map, $s);
+    padding-right: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .py-#{$s} {
+    padding-top: map-get($spacing-map, $s);
+    padding-bottom: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .pl-#{$s} {
+    padding-left: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .pt-#{$s} {
+    padding-top: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .pr-#{$s} {
+    padding-right: map-get($spacing-map, $s);
+  }
+}
+
+@each $s in map-keys($spacing-map) {
+  .pb-#{$s} {
+    padding-bottom: map-get($spacing-map, $s);
+  }
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.\!p-0 {
+  padding: 0 !important;
+}

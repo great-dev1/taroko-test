@@ -1,0 +1,522 @@
+@import 'variables', 'mixins';
+
+.root {
+  position: relative;
+  border: none;
+  outline: none;
+  width: var(--button-width, auto);
+  max-width: var(--button-max-width, 100%);
+  background-color: var(--bg-color);
+  // color: var(--color);
+  text-decoration: none;
+  text-align: var(--text-align, center);
+  transition: background-color $duration ease, border-color $duration ease, color $duration ease,
+    box-shadow $duration ease, opacity $duration ease;
+  cursor: pointer;
+  @include flexC(true);
+  @include font($base-font-size, $font-weight-regular, $base-line-height, var(--color, $surface-9));
+
+  &.radius-xs {
+    border-radius: $border-radius-xs;
+  }
+
+  &.radius-sm {
+    border-radius: $border-radius-sm;
+  }
+
+  &.radius-md {
+    border-radius: $border-radius-md;
+  }
+
+  &.radius-lg {
+    border-radius: $border-radius-lg;
+  }
+
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @include flexC(true);
+  }
+
+  .before,
+  .after {
+    flex: 0 0 auto;
+    background-color: transparent;
+    @include flexC(true);
+
+    svg {
+      vertical-align: bottom;
+      transition: fill $duration ease;
+    }
+  }
+
+  .label {
+    flex: 1 1 auto;
+    text-align: inherit;
+    user-select: none;
+    color: inherit;
+    background-color: transparent;
+    font: inherit;
+    line-height: inherit;
+    margin: 0 $spacing-sm-1;
+    @include text-ellipsis();
+  }
+
+  /* State */
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &.disabled:not(.loading) {
+    opacity: 0.7;
+  }
+
+  &.inline {
+    display: inline-flex;
+  }
+
+  &.loading {
+    .before,
+    .label,
+    .after {
+      opacity: 0;
+    }
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+}
+
+/* Size */
+
+.s {
+  //padding: 2px;
+
+  .label {
+    min-width: var(--button-min-width, $spacing-7);
+    padding: 0 $spacing-1;
+  }
+
+  &.rounded {
+    border-radius: 12px;
+  }
+}
+
+.m {
+  padding: $spacing-sm-1;
+  height: $spacing-sm-base * 12;
+
+  .label {
+    min-width: var(--button-min-width, $spacing-8);
+    padding: 0 $spacing-sm-1;
+  }
+
+  &.rounded {
+    border-radius: $border-radius-lg;
+  }
+}
+
+.xm {
+  padding: 6px;
+  border-radius: $border-radius-xs;
+  width: 120px;
+
+  .label {
+    min-width: var(--button-min-width, $spacing-8);
+    padding: 0 $spacing-sm-1;
+  }
+}
+
+.l {
+  padding: $spacing-2;
+  font-weight: $font-weight-semi-bold;
+
+  .label {
+    min-width: var(--button-min-width, $spacing-base * 12);
+    padding: 0 $spacing-1;
+  }
+
+  &.rounded {
+    border-radius: 28px;
+  }
+}
+
+.xl {
+  padding: $spacing-2;
+  font-weight: $font-weight-semi-bold;
+  height: $spacing-base * 7;
+
+  .label {
+    min-width: var(--button-min-width, $spacing-base * 20);
+    padding: 0 $spacing-1;
+  }
+
+  .before + .label {
+    min-width: $spacing-sm-1 * 32;
+  }
+
+  &.rounded {
+    border-radius: 28px;
+  }
+}
+
+.accent {
+  color: $button-white;
+  @include bg-gradient($highlight-9, $highlight-7);
+
+  &.disabled {
+    background: $surface-4;
+
+    &::before,
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.primary {
+  color: $button-white;
+  background: $color-lavender-1;
+
+  &:hover:not(.disabled) {
+    background: $color-lavender;
+  }
+
+  &.disabled {
+    background: $surface-4;
+
+    &::before,
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.secondary {
+  color: $surface-8;
+  background: transparent;
+  transition: background-color $duration-s ease;
+
+  &:hover {
+    background: $surface-6;
+  }
+
+  &.disabled {
+    color: $surface-4;
+  }
+}
+
+/* Variant */
+
+.default {
+  --icon-fill: #{$surface-8};
+  --bg-color: #{$surface-3};
+
+  &.hovered:not(.disabled),
+  &:hover:not(.disabled) {
+    --icon-fill: #{$surface-9};
+    --bg-color: #{$surface-5};
+  }
+
+  &:focus:not(.disabled) {
+    --icon-fill: #{$surface-10};
+    --bg-color: #{$surface-6};
+  }
+}
+
+.highlight,
+.highlightOutline,
+.attention,
+.danger,
+.lavender,
+.lavenderDark,
+.plainLavenderInvert {
+  @include prepare-bg-gradient(true);
+  @include display-bg-gradient(true);
+}
+
+.highlight {
+  --bg-gradient: #{$highlight-6};
+  --bg-gradient-hover: #{$highlight-7};
+  --icon-fill: #{$surface-10};
+  --color: #{$button-white};
+
+  &.disabled {
+    --bg-gradient: #{$highlight-2};
+    --bg-gradient-hover: #{$highlight-2};
+  }
+
+  &:focus:not(.disabled) {
+    --bg-gradient: #{$highlight-7};
+  }
+}
+
+.highlightOutline {
+  --bg-gradient: #{$highlight-6};
+  --bg-gradient-hover: #{$highlight-7};
+  --icon-fill: #{$surface-10};
+  --color: #{$button-white};
+
+  &::after {
+    content: '';
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    margin: 2px;
+    border-radius: 6px;
+    position: absolute;
+    background: #14131e;
+    transition: background $duration-s ease;
+    z-index: 0;
+    opacity: 1;
+  }
+
+  &.hovered:not(.disabled),
+  &:hover:not(.disabled)::after,
+  &:focus:not(.disabled)::after {
+    background: #22212f;
+  }
+}
+
+.highlightText {
+  .label {
+    @include gradient-text($highlight-6);
+  }
+
+  &.hovered:not(.disabled),
+  &:hover:not(.disabled),
+  &:focus:not(.disabled) {
+    .label {
+      @include gradient-text($highlight-7);
+    }
+  }
+}
+
+.attention {
+  --bg-gradient: #{$highlight-0};
+  --bg-gradient-hover: #{$highlight-1};
+  --icon-fill: url(#gradient_svg__gradient);
+  --color: #{$button-white};
+}
+
+.danger {
+  --bg-gradient: #{$highlight-4};
+  --bg-gradient-hover: #{$highlight-5};
+  --icon-fill: #{$surface-9};
+  --color: #{$button-white};
+}
+
+.dashed {
+  --bg-color: transparent;
+  --color: #{$surface-8};
+  --icon-fill: #{$surface-8};
+
+  border: 2px dashed $surface-6;
+  border-radius: $border-radius-sm;
+
+  &.hovered:not(.disabled),
+  &:hover:not(.disabled) {
+    --color: #{$surface-9};
+    --icon-fill: #{$surface-9};
+
+    border-color: $surface-7;
+  }
+
+  &:focus:not(.disabled) {
+    --color: #{$surface-10};
+    --icon-fill: #{$surface-10};
+
+    border-color: $surface-8;
+  }
+}
+
+.invert {
+  --bg-color: #{$button-white};
+  --color: #{$button-invert-text};
+  --icon-fill: none;
+
+  border: 1px solid $surface-4;
+
+  &.hovered:not(.disabled),
+  &:hover:not(.disabled) {
+    --color: #{$button-invert-hover};
+  }
+
+  &:focus:not(.disabled) {
+    --color: #{$button-invert-hover};
+  }
+}
+
+// For tab navigation buttons
+.tab {
+  --bg-color: transparent;
+  --color: #{$nav-button};
+  --icon-fill: #{$nav-button};
+
+  &.hovered:not(.disabled) {
+    --color: #{$nav-button-active};
+    --icon-fill: #{$nav-button-active};
+
+    font-weight: 600;
+  }
+
+  &:hover:not(.disabled) {
+    --color: #{$nav-button-active};
+    --icon-fill: #{$nav-button-active};
+  }
+
+  &:focus:not([disabled]),
+  &[aria-expanded='true'] {
+    box-shadow: inset 0 0 0 1px $color-lavender;
+  }
+}
+
+.plain {
+  --bg-color: transparent;
+  --color: #{$surface-8};
+  --icon-fill: #{$surface-8};
+
+  &.hovered:not(.disabled),
+  &:hover:not(.disabled) {
+    --color: #{$surface-10};
+    --icon-fill: #{$surface-10};
+  }
+
+  &:focus:not(.disabled) {
+    --color: #{$surface-10};
+    --icon-fill: #{$surface-10};
+  }
+
+  &:focus:not([disabled]),
+  &[aria-expanded='true'] {
+    box-shadow: inset 0 0 0 1px $color-lavender;
+  }
+}
+
+.plainUnderline {
+  --bg-color: transparent;
+  --color: #{$surface-9};
+  --icon-fill: #{$surface-9};
+
+  &.hovered:not(.disabled),
+  &:hover:not(.disabled) {
+    --color: #{$color-lavender};
+    --icon-fill: #{$color-lavender};
+  }
+
+  &:focus:not(.disabled) {
+    --color: #{$color-lavender};
+    --icon-fill: #{$color-lavender};
+  }
+
+  text-decoration: underline;
+}
+
+.plainAttention {
+  --bg-color: transparent;
+  --bg-gradient-hover: #{$highlight-1};
+  --icon-fill: url(#gradient_svg__gradient);
+
+  .before,
+  .after {
+    svg {
+      fill: url(#gradient_svg__gradient);
+    }
+  }
+
+  @include prepare-bg-gradient(true);
+
+  &.hovered:not(.disabled),
+  &:hover:not(.disabled) {
+    @include display-bg-gradient(true);
+
+    --color: #{$button-white};
+  }
+}
+
+.plainLavender {
+  --bg-color: transparent;
+  --icon-fill: #{$color-lavender};
+
+  transition: color $duration ease;
+  @include font(1rem, $font-weight-semi-bold, $line-height-lg, $color-lavender);
+
+  &.hovered:not(.disabled),
+  &:hover:not(.disabled),
+  &:focus:not(.disabled) {
+    --icon-fill: #{$surface-10};
+
+    color: $surface-10;
+  }
+}
+
+.plainLavenderInvert {
+  --bg-color: transparent;
+  --icon-fill: #{$surface-10};
+  --color: #{$surface-10};
+
+  .m,
+  .l {
+    font-weight: 600;
+  }
+
+  &.hovered:not(.disabled),
+  &:hover:not(.disabled),
+  &:focus:not(.disabled) {
+    --icon-fill: #{$color-lavender};
+    --color: #{$color-lavender};
+  }
+}
+
+.lavender {
+  --bg-gradient: #{$lavender-6};
+  --bg-gradient-hover: #{$lavender-6};
+  --icon-fill: #eaeaf8;
+
+  @include font($base-font-size, $font-weight-regular, $base-line-height, #fff);
+
+  &.disabled {
+    --bg-gradient: #{$lavender-6};
+    --bg-gradient-hover: #{$lavender-6};
+  }
+}
+
+.lavenderDark {
+  --bg-gradient: #{$lavender-1};
+  --bg-gradient-hover: #{$lavender-1};
+  --icon-fill: #{$surface-9};
+
+  &.disabled {
+    --bg-gradient: #{$lavender-1};
+    --bg-gradient-hover: #{$lavender-1};
+  }
+}
+
+/* Focused */
+
+// .lavender,
+// .lavenderDark {
+//   &:focus:not(.disabled) {
+//     box-shadow: inset 0 0 0 1px $color-lavender;
+//   }
+// }
+
+.attention,
+.danger,
+.plainAttention {
+  &::after,
+  &::before {
+    transition: box-shadow $duration ease;
+  }
+
+  &:focus:not(.disabled) {
+    &,
+    &::before,
+    &::after {
+      box-shadow: inset 0 0 0 1px $progress-2;
+    }
+  }
+}

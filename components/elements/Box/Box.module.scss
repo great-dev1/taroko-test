@@ -1,0 +1,42 @@
+@import 'variables', 'mixins';
+
+.root {
+  border: 1px solid $surface-4;
+
+  &.borderless {
+    border: none;
+  }
+
+  // Border radius
+
+  &.radius-xs {
+    border-radius: $border-radius-xs;
+  }
+
+  &.radius-sm {
+    border-radius: $border-radius-sm;
+  }
+
+  &.radius-md {
+    border-radius: $border-radius-md;
+  }
+
+  &.radius-lg {
+    border-radius: $border-radius-lg;
+  }
+
+  // Variant
+
+  &.dark {
+    background-color: $surface-1;
+  }
+
+  &.light {
+    background-color: $surface-2;
+  }
+
+  //used to timeline launch calendar popups
+  &.lightGrey {
+    background-color: $surface-3;
+  }
+}

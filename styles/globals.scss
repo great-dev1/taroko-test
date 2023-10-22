@@ -1,0 +1,306 @@
+@import 'mixins';
+@import 'variables';
+@import 'reset';
+@import 'typography';
+@import 'bg';
+@import 'border';
+@import 'border-radius';
+@import 'margin';
+@import 'padding';
+
+:root {
+  //colors for red gradient
+  // --highlight-0-alpha: #44251c;
+  // --highlight-0-beta: #482127;
+  // --highlight-1-alpha: #5b3226;
+  // --highlight-1-beta: #57252d;
+  // --highlight-2-alpha: #734030;
+  // --highlight-2-beta: #6c2934;
+  // --highlight-3-alpha: #844b3a;
+  // --highlight-3-beta: #752935;
+  // --highlight-4-alpha: #a55841;
+  // --highlight-4-beta: #963133;
+  // --highlight-5-alpha: #c66548;
+  // --highlight-5-beta: #ba3c3f;
+  // --highlight-6-alpha: #ff8540;
+  // --highlight-6-beta: #e72828;
+  // --highlight-7-alpha: #ffaa79;
+  // --highlight-7-beta: #f43b3b;
+  // --highlight-8-alpha: #ff8540;
+  // --highlight-8-beta: #e82c29;
+  --highlight-10: #f4ede6;
+  --highlight-11: #f7dccb;
+  --highlight-12: #ffeeea;
+
+  //colors for lavender gradient
+  --color-lavender: #8489ff;
+  --color-lavender-1: #7378ff;
+  --lavender-1-alpha: rgba(132, 137, 255, 0.32);
+  --lavender-1-beta: rgba(132, 137, 255, 0);
+  --lavender-2-alpha: rgba(132, 137, 255, 0.32);
+  --lavender-2-beta: rgba(132, 137, 255, 0.16);
+  --lavender-3-alpha: rgba(132, 137, 255, 0.32);
+  --lavender-3-beta: #8489ff;
+  --lavender-4-alpha: #565888;
+  --lavender-4-beta: #333373;
+
+  //colors for approved
+  --approved-0: #0b2f12;
+  --approved-1: #0e3e18;
+  --approved-2: #094e24;
+  --approved-3: #116533;
+  --approved-4: #137d44;
+  --approved-5: #11ac62;
+
+  //colors for progress bar
+  --progress-0: #ff4040;
+  --progress-1: #f04d31;
+  --progress-2: #ff6221;
+
+  //colors for AudienceCard, Workspaces, BattleCard, TestimonialsRow, InvoiceRow
+  --color-yellow: #ffc700;
+
+  //color for gradient buttons
+  --button-white: #fefeff;
+
+  //color for google auth button
+  --button-invert-text: #2b2b3d;
+  --button-invert-hover: #121119;
+
+  //color for scrollbar
+  --scrollbar-color: linear-gradient(135deg, #ffaa79 0%, #f43b3b 100%);
+
+  //new colors for sidebar gradient
+  --nav-panel-gradient-color: linear-gradient(
+    183.07deg,
+    #1c1d30 8.62%,
+    #4c4f9a 25.28%,
+    #1e1f34 42.4%,
+    #51548b 77.1%,
+    #202024 97.45%
+  );
+  // for 404 title common color
+  --error-chair-color: #222231;
+  --error-planet-bg: #222231;
+  --error-planet-bg-dark: #222231;
+  --error-planet-bg-light: #37374a;
+  --error-planet-bg-semi-light: #2b2b3d;
+}
+
+#layoutLeftSidebar,
+html[data-theme='dark'] {
+  //surface
+  --surface-0: #121119;
+  --surface-1: #1b1a26;
+  --surface-2: #222231;
+  --surface-3: #2b2b3d;
+  --surface-4: #37374a;
+  --surface-5: #3c3e52;
+  --surface-6: #515167;
+  --surface-7: #6f6f88;
+  --surface-8: #b4b4c9;
+  --surface-9: #eaeaf8;
+  --surface-10: #fefeff;
+  --surface-11: #eaeaf8;
+
+  //color for background
+  --main-bg-color: var(--surface-0);
+
+  //color for scrollbar
+  --scrollbar-bg: var(--surface-0);
+
+  //colors for background gradient
+  --bg-gradient-opacity: 0.1;
+  --bg-gradient-color: #8489ff;
+
+  // for 404 title common color
+  --error-planet-bg: #222231;
+  --error-planet-bg-dark: #222231;
+  --error-planet-bg-light: #37374a;
+  --error-planet-bg-semi-light: #2b2b3d;
+
+  //for not started status icon
+  --status-icon: var(--highlight-12);
+
+  // navigation tab button
+  --nav-button: #6f6f88;
+  --nav-button-active: #fefeff;
+
+  // tooltip
+  --tooltip-background: #2b2b3d;
+  --tooltip-text-color: #eaeaf8;
+
+  //colors for calendar component
+  --calendar-range: var(--color-lavender);
+  --calendar-background: var(--surface-3);
+}
+
+html[data-theme='light'] {
+  //surface
+  --surface-0: #fff;
+  --surface-1: #fefeff;
+  --surface-2: #f8f8f8;
+  --surface-3: #f4ede6;
+  --surface-4: #e5e5e5;
+  --surface-5: #d4d1cd;
+  --surface-6: #d4d1cd;
+  --surface-7: #474752;
+  --surface-8: #2b2b3d;
+  --surface-9: #222231;
+  --surface-10: #121119;
+  --surface-11: #eaeaf8;
+
+  //color for background
+  --main-bg-color: var(--surface-0);
+
+  //color for scrollbar
+  --scrollbar-bg: var(--surface-10);
+
+  //new colors for background gradient
+  --bg-gradient-opacity: 0.08;
+  --bg-gradient-color: linear-gradient(135deg, #ffaa79 0%, #f43b3b 100%);
+
+  // for 404 title common color
+  --error-planet-bg: #eee;
+  --error-planet-bg-dark: #7b7b87;
+  --error-planet-bg-light: #f4ede6;
+  --error-planet-bg-semi-light: #d4d1cd;
+
+  //for not started status icon
+  --status-icon: #1b1a26;
+
+  // navigation tab button
+  --nav-button: #a8a8a8;
+  --nav-button-active: #474752;
+
+  // tooltip
+  --tooltip-background: #fefeff;
+  --tooltip-text-color: #1b1a26;
+
+  //colors for calendar component
+  --calendar-range: var(--lavender-4-beta);
+  --calendar-background: var(--surface-0);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  @include scrollbar();
+
+  &:focus {
+    outline: none;
+  }
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+body {
+  color: var(--surface-9);
+  position: relative;
+  min-height: 100%;
+  background: var(--main-bg-color);
+
+  &.darkMode {
+    --color-secondary-50: #{$surface-9};
+    --color-secondary-100: #{$surface-8};
+    --color-secondary-200: #{$surface-7};
+    --color-secondary-300: #{$surface-6};
+    --color-secondary-400: #{$surface-5};
+    --color-secondary-500: #{$surface-4};
+    --color-secondary-600: #{$surface-3};
+    --color-secondary-700: #{$surface-2};
+    --color-secondary-800: #{$surface-1};
+    --color-secondary-900: #{$surface-0};
+    --body-bg: var(--main-bg-color);
+    // --scrollbar-color: var(--scrollbar-color);
+    // --scrollbar-bg: var(--scrollbar-bg);
+
+    color: var(--surface-9);
+    background: var(--main-bg-color);
+  }
+}
+
+/**
+ * Chrome has a bug with transitions on load since 2012!
+ *
+ * To prevent a "pop" of content, you have to disable all transitions until
+ * the page is done loading.
+ *
+ * https://lab.laukstein.com/bug/input
+ * https://twitter.com/timer150/status/1345217126680899584
+ */
+body.loading * {
+  transition: none !important;
+}
+
+// override colors for page progress bar
+body #nprogress {
+  .bar {
+    background: $highlight-5;
+  }
+
+  .peg {
+    box-shadow: 0 0 10px var(--highlight-5-alpha), 0 0 5px var(--highlight-5-beta);
+  }
+
+  .spinner-icon {
+    display: none; // hide spinner
+  }
+}
+
+body.locked {
+  main *,
+  #MODAL_ROOT * {
+    pointer-events: none !important;
+  }
+}
+
+.tippy-box {
+  &[data-state='visible'][data-animation='fade'] {
+    opacity: 1;
+  }
+
+  &[data-state='hidden'][data-animation='fade'] {
+    opacity: 0;
+  }
+
+  &[data-state='visible'][data-animation='scale'] {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  &[data-state='hidden'][data-animation='scale'] {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+#MODAL_ROOT {
+  position: relative;
+  z-index: 100;
+}
+
+#POPUP_ROOT {
+  position: relative;
+  z-index: 101;
+}
+
+#TOOLTIP_ROOT {
+  position: relative;
+  z-index: 102;
+}

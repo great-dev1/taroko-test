@@ -1,0 +1,42 @@
+@import 'variables';
+
+.editor,
+.message {
+  :global {
+    .ProseMirror {
+      height: 100%;
+
+      p.is-editor-empty:first-child::before {
+        overflow-wrap: break-word;
+        color: $surface-7;
+        content: attr(data-placeholder);
+        float: left;
+        height: 0;
+        pointer-events: none;
+      }
+
+      &-focused {
+        outline: none;
+      }
+
+      a {
+        color: $color-lavender;
+        text-decoration: underline;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+
+      em {
+        font-style: italic;
+      }
+
+      .mention {
+        color: $color-lavender;
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+@import 'variables', 'mixins';
+
+$text-align-map: (left, center, right);
+
+.root {
+  // Types
+  &.heading-l {
+    font-size: $heading-l-font-size;
+    font-weight: $heading-font-weight !important;
+  }
+
+  &.heading-m {
+    font-size: $heading-m-font-size;
+    font-weight: $heading-font-weight !important;
+  }
+
+  &.heading-s {
+    font-size: $heading-s-font-size;
+    font-weight: $heading-font-weight !important;
+  }
+
+  &.body-m {
+    font-size: $body-font-size-m;
+    font-weight: $base-font-weight;
+  }
+
+  &.body-s {
+    font-size: $body-font-size-s;
+    font-weight: $base-font-weight;
+  }
+
+  &.body-l {
+    font-size: $body-font-size-l;
+    font-weight: $base-font-weight;
+  }
+
+  &.caption {
+    font-size: $caption-font-size;
+    font-weight: $base-font-weight;
+  }
+
+  // Line height
+
+  &.line-height-lg {
+    line-height: $line-height-lg;
+  }
+
+  &.line-height-md {
+    line-height: $line-height-md;
+  }
+
+  &.line-height-sm {
+    line-height: $line-height-sm;
+  }
+
+  // Variants
+
+  &.accent {
+    color: transparent !important;
+    background: $highlight-9;
+    -webkit-background-clip: text;
+    background-clip: text;
+    position: relative;
+
+    // We need to use pseudo elements to display line-through with gradient backgrounds (text-decoration won't work)
+    &.lineThrough {
+      &::after {
+        content: '';
+        position: absolute;
+        border-top: 1px solid $progress-1;
+        top: 53%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &.primary {
+    color: $color-lavender-1;
+  }
+
+  &.secondary {
+    color: $surface-8;
+  }
+
+  &.success {
+    color: $approved-5;
+  }
+
+  &.danger {
+    color: $progress-1;
+  }
+
+  &.default {
+    color: $surface-9;
+  }
+
+  //used to timeline, launch calendar tooltip's text
+  &.light {
+    color: $surface-11;
+  }
+
+  &.dark {
+    color: $surface-6;
+  }
+
+  // Text align
+  @each $a in $text-align-map {
+    &.#{$a} {
+      text-align: $a;
+    }
+  }
+
+  &.bold {
+    font-weight: $font-weight-semi-bold;
+  }
+
+  &.lineThrough {
+    text-decoration: line-through;
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}

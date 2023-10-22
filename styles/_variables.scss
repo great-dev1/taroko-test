@@ -1,0 +1,312 @@
+// Design from new design system
+
+$surface-0: var(--surface-0);
+$surface-1: var(--surface-1);
+$surface-2: var(--surface-2);
+$surface-3: var(--surface-3);
+$surface-4: var(--surface-4);
+$surface-5: var(--surface-5);
+$surface-6: var(--surface-6);
+$surface-7: var(--surface-7);
+$surface-8: var(--surface-8);
+$surface-9: var(--surface-9);
+$surface-10: var(--surface-10);
+$surface-11: var(--surface-11);
+
+$nav-button: var(--nav-button);
+$nav-button-active: var(--nav-button-active);
+
+// Colors for new tooltip
+$tooltip-background: var(--tooltip-background);
+$tooltip-text-color: var(--tooltip-text-color);
+
+$surface-map: (
+  0: $surface-0,
+  1: $surface-1,
+  2: $surface-2,
+  3: $surface-3,
+  4: $surface-4,
+  5: $surface-5,
+  6: $surface-6,
+  7: $surface-7,
+  8: $surface-8,
+  9: $surface-9,
+  10: $surface-10,
+  11: $surface-11,
+);
+
+$highlight-0: linear-gradient(135deg, #44251c 0%, #482127 100%);
+$highlight-1: linear-gradient(135deg, #5b3226 0%, #57252d 100%);
+$highlight-2: linear-gradient(135deg, #734030 0%, #6c2934 100%);
+$highlight-3: linear-gradient(135deg, #844b3a 0.41%, #752935 100%);
+// previously $color-red-700/--color-accent-700
+$highlight-4: linear-gradient(138.83deg, #a55841 6.86%, #963133 94.78%);
+// previously $color-red-600/--color-accent-600
+$highlight-5: linear-gradient(138.83deg, #c66548 6.86%, #ba3c3f 94.78%);
+$highlight-6: linear-gradient(135deg, #ff8540 0%, #e72828 100%);
+// previously $color-red-400/--color-accent-400
+$highlight-7: linear-gradient(135deg, #ffaa79 0%, #f43b3b 100%);
+// $highlight-8 used only in one place -> TimeFrame.module
+$highlight-8: linear-gradient(135deg, #ff8540 0%, #e82c29 100%);
+// previously $color-red-500/--color-accent-500
+$highlight-9: linear-gradient(135deg, #ff8a47 0%, #fd1515 100%);
+// previously $color-red-50/--color-accent-50
+$highlight-10: var(--highlight-10);
+// previously $color-red-100/--color-accent-100
+$highlight-11: var(--highlight-11);
+// exists in color palette but not used in code
+$highlight-12: var(--highlight-12);
+
+$highlight-map: (
+  '0': $highlight-0,
+  '1': $highlight-1,
+  '2': $highlight-2,
+  '3': $highlight-3,
+  '4': $highlight-4,
+  '5': $highlight-5,
+  '6': $highlight-6,
+  '7': $highlight-7,
+);
+// previously $color-lavender-400/--color-primary-400
+$color-lavender: var(--color-lavender);
+// previously $color-lavender-500/--color-primary-500
+$color-lavender-1: var(--color-lavender-1);
+$lavender-1: linear-gradient(90.08deg, var(--lavender-1-alpha) 1.87%, var(--lavender-1-beta) 100.97%);
+$lavender-2: linear-gradient(90.08deg, var(--lavender-2-alpha) 1.87%, var(--lavender-2-beta) 100.97%);
+// there is no such color gradient in pallet for light and dark mode
+// used only in CopilotIconElement.module
+$lavender-3: linear-gradient(90.08deg, var(--lavender-3-alpha) 1.87%, var(--lavender-3-beta) 100.97%);
+// previously $color-lavender-800/--color-primary-800
+$lavender-4: linear-gradient(90.08deg, var(--lavender-4-alpha) 1.87%, var(--lavender-4-beta) 100.97%);
+// previously $color-lavender-900/--color-primary-900
+$lavender-5: linear-gradient(90.08deg, var(--lavender-5-alpha) 1.87%, var(--lavender-5-beta) 100.97%);
+$lavender-6: linear-gradient(118deg, var(--lavender-4-alpha) 0%, var(--lavender-4-beta) 100%);
+
+$color-lavender-6: #686dde;
+
+//colors for calendar component
+$calendar-range: var(--calendar-range);
+$calendar-range-light: linear-gradient(93.35deg, var(--lavender-2-beta) 3.88%, var(--lavender-1-alpha) 99.56%);
+$calendar-background: var(--calendar-background);
+$calendar-dark: var(--lavender-4-alpha);
+
+$lavender-map: (
+  '1': $lavender-1,
+  '2': $lavender-2,
+);
+
+$approved-0: var(--approved-0);
+$approved-1: var(--approved-1);
+$approved-2: var(--approved-2);
+$approved-3: var(--approved-3);
+$approved-4: var(--approved-4);
+// previously $color-success-500/--color-success-500
+$approved-5: var(--approved-5);
+
+// used only in AudienceCard.module, Workspaces.module, BattleCard.module, TestimonialsRow.module, InvoiceRow.module
+$color-yellow: var(--color-yellow);
+
+$progress-0: var(--progress-0);
+// previously $color-danger-500/--color-danger-500
+$progress-1: var(--progress-1);
+$progress-2: var(--progress-2);
+
+// no usage in codebase
+$delay-1: #ea9c25;
+
+$tag-variant-bg-color-1: #22643a;
+$tag-variant-bg-color-2: #226464;
+$tag-variant-bg-color-3: #2a547b;
+
+//no such color in in pallet for light and dark mode
+$color-white: #fff;
+// Billing.module, Error.module
+$base-bg-color: $surface-0;
+// EditableText.module
+//!!changed to $surface-10 from $color-white: #fff;
+$base-fg-color: $surface-10;
+
+//color for gradient buttons
+$button-white: var(--button-white);
+
+// # New design
+//colors for background gradient
+$bg-gradient-opacity: var(--bg-gradient-opacity);
+$bg-gradient-color: var(--bg-gradient-color);
+
+//new colors for sidebar gradient
+$nav-panel-gradient-color: var(--nav-panel-gradient-color);
+
+// for 404 title common color
+$error-chair-color: var(--error-chair-color);
+$error-planet-bg: var(--error-planet-bg);
+$error-planet-bg-dark: var(--error-planet-bg-dark);
+$error-planet-bg-light: var(--error-planet-bg-light);
+$error-planet-bg-semi-light: var(--error-planet-bg-semi-light);
+
+//color for google auth button
+$button-google-text: var(--button-google-text);
+$button-google-hover: var(--button-google-hover);
+
+// $color-white: #fff;
+
+$color-danger-500: #f04d31;
+
+$color-success-500: #11ac62;
+
+//color for google auth button
+$button-invert-text: var(--button-invert-text);
+$button-invert-hover: var(--button-invert-hover);
+
+// Typography
+$base-font-size: 16px;
+$base-font-weight: 400;
+$base-line-height: 1.25; /* New design */
+$base-font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Helvetica Neue', sans-serif;
+
+$body-font-size-l: $base-font-size * 1.25; //20
+$body-font-size-m: $base-font-size; //16
+$body-font-size-s: $base-font-size * 0.875; //14
+
+$heading-l-font-size: $base-font-size * 2; //32
+$heading-m-font-size: $base-font-size * 1.5; //24
+$heading-s-font-size: $base-font-size * 1.25; //20
+
+$caption-font-size: $base-font-size * 0.75; //12
+
+$font-weight-regular: $base-font-weight; //400
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+$heading-font-weight: $font-weight-bold;
+$heading-font-weight-bold: 900;
+
+$line-height-lg: 1.5;
+$line-height-md: $base-line-height; //1.25
+$line-height-sm: $base-line-height * 0.8; //1
+
+$heading-fw-xl: $font-weight-bold;
+$heading-fw-l: $font-weight-semi-bold;
+
+$h1-font-size: $heading-l-font-size;
+$h3-font-size: $heading-m-font-size;
+$h4-font-size: $heading-s-font-size;
+$h5-font-size: $base-font-size;
+
+// Spaces
+$spacing-base: 8px;
+
+$spacing-1: $spacing-base * 1; //8
+$spacing-2: $spacing-base * 2; //16
+$spacing-3: $spacing-base * 3; //24
+$spacing-4: $spacing-base * 4; //32
+$spacing-5: $spacing-base * 5; //40
+$spacing-6: $spacing-base * 6; //48
+$spacing-7: $spacing-base * 7; //56
+$spacing-8: $spacing-base * 8; //64
+$spacing-9: $spacing-base * 9; //72
+$spacing-10: $spacing-base * 10; //80
+$spacing-11: $spacing-base * 11; //88
+
+$spacing-sm-base: $spacing-base * 0.5; //4
+
+$spacing-sm-1: $spacing-sm-base * 1; //4
+$spacing-sm-2: $spacing-sm-base * 2; //8
+$spacing-sm-3: $spacing-sm-base * 3; //12
+$spacing-sm-4: $spacing-sm-base * 4; //16
+$spacing-sm-5: $spacing-sm-base * 5; //20
+$spacing-sm-6: $spacing-sm-base * 6; //24
+$spacing-sm-7: $spacing-sm-base * 7; //28
+$spacing-sm-8: $spacing-sm-base * 8; //32
+$spacing-sm-9: $spacing-sm-base * 9; //36
+$spacing-sm-10: $spacing-sm-base * 10; //40
+
+$spacing-map: (
+  '0-5': $spacing-sm-1,
+  '1': $spacing-sm-2,
+  '1-5': $spacing-sm-3,
+  '2': $spacing-sm-4,
+  '2-5': $spacing-sm-5,
+  '3': $spacing-sm-6,
+  '3-5': $spacing-sm-7,
+  '4': $spacing-sm-8,
+  '4-5': $spacing-sm-9,
+  '5': $spacing-sm-10,
+  '6': $spacing-6,
+  '7': $spacing-7,
+  '8': $spacing-8,
+  '9': $spacing-9,
+  '10': $spacing-10,
+);
+
+$layout-header-height: 88px;
+$layout-left-sidebar-width: 224px;
+$layout-right-sidebar-width: 242px;
+$layout-content-offset-right: $layout-right-sidebar-width + 20px;
+$layout-content-offset-left: $spacing-5;
+
+// Radiuses
+$border-radius-xs: 4px;
+$border-radius-sm: 8px;
+$border-radius-md: 10px;
+$border-radius-lg: 16px;
+$border-radius-max: 9999px;
+
+// Transitions
+// TODO: replace with duration-s
+$duration: 0.2s;
+
+$duration-s: 0.2s;
+$duration-m: 0.4s;
+$duration-l: 0.6s;
+
+// Layout
+$layout-header-height: $spacing-base * 12;
+$scrollbar-width: 4px;
+
+// Shadow
+$shadow-tooltip: 0 4px 44px 24px rgba(0, 0, 0, 0.08);
+
+// Z-Index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-overlay: 1040;
+$z-index-drawer: 1040;
+$z-index-modal: 1060;
+$z-index-popover: 1070;
+$z-index-tooltip: 1080;
+
+$align-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+  baseline: baseline,
+);
+
+$align-self-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+  baseline: baseline,
+);
+
+$justify-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+  space-around: space-around,
+  space-between: space-between,
+  space-evenly: space-evenly,
+);
+
+$justify-self-map: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  stretch: stretch,
+  baseline: baseline,
+);

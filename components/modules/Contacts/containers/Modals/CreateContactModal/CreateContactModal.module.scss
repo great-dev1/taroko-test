@@ -1,0 +1,12 @@
+@import 'variables';
+
+.root {
+  padding: $spacing-1;
+  width: 100%;
+  .input {
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-left: $spacing-1;
+    padding: $spacing-sm-1;
+  }
+}

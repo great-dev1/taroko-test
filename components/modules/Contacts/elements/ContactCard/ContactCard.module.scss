@@ -1,0 +1,29 @@
+@import 'variables', 'mixins';
+
+.root {
+  min-height: 150px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 16px;
+  column-gap: 8px;
+  background: $surface-5;
+  overflow: hidden;
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 50%;
+    margin-right: 16px;
+  }
+
+  p {
+    margin: 0px;
+    line-height: 1.5;
+  }
+}

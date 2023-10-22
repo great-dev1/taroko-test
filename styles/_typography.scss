@@ -1,0 +1,25 @@
+@import 'variables', 'mixins';
+
+h1 {
+  @include font($h1-font-size, $heading-fw-xl, $base-line-height);
+}
+
+h2 {
+  @include font($h3-font-size, $heading-fw-l, $base-line-height);
+}
+
+h3 {
+  @include font($h3-font-size, $heading-fw-l, $base-line-height);
+}
+
+h4 {
+  @include font($h4-font-size, $heading-fw-l, $base-line-height);
+}
+
+h5 {
+  @include font($h5-font-size, $heading-fw-l, $base-line-height);
+}
+
+p {
+  @include font($base-font-size, $base-font-weight, $base-line-height);
+}

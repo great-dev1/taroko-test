@@ -1,0 +1,50 @@
+@import 'variables', 'mixins';
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 40px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #333;
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  left: $spacing-4;
+}
+
+.heading {
+  @include font(24px, 600, 1.5, $surface-9);
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: $spacing-7;
+  left: $spacing-4;
+}
+
+@media only screen and (max-width: 768px) {
+  .root {
+    justify-content: center !important;
+    border: 1px solid #333;
+    padding: 8px 20px;
+  }
+  .btn_add {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .heading {
+    @include font(16px, 400, 1.5, $surface-9);
+  }
+  .menu {
+    display: none;
+  }
+  .open {
+    display: block;
+  }
+}

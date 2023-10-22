@@ -1,0 +1,25 @@
+@import 'variables';
+
+.content,
+.message {
+  :global {
+    a {
+      color: $color-lavender;
+      text-decoration: underline;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    .mention {
+      color: $color-lavender;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+}

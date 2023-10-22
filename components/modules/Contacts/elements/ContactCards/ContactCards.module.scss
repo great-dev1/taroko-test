@@ -1,0 +1,15 @@
+@import 'variables';
+
+.root {
+  padding: 16px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+}
+
+@media only screen and (max-width: 768px) {
+  .root {
+    grid-template-columns: 1fr;
+  }
+}

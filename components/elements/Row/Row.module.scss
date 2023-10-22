@@ -1,0 +1,44 @@
+@use 'sass:math';
+@import 'variables';
+
+.root {
+  display: flex;
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  @each $s in map-keys($spacing-map) {
+    &.gutter-#{$s},
+    &.gutter-y-#{$s} {
+      margin-top: map-get($spacing-map, $s) * -1;
+
+      > * {
+        margin-top: map-get($spacing-map, $s);
+      }
+    }
+
+    &.gutter-#{$s},
+    &.gutter-x-#{$s} {
+      margin-left: math.div(map-get($spacing-map, $s), -2);
+      margin-right: math.div(map-get($spacing-map, $s), -2);
+
+      > * {
+        padding-left: math.div(map-get($spacing-map, $s), 2);
+        padding-right: math.div(map-get($spacing-map, $s), 2);
+      }
+    }
+  }
+
+  @each $a in map-keys($align-map) {
+    &.align-#{$a} {
+      align-items: map-get($align-map, $a);
+    }
+  }
+
+  @each $j in map-keys($justify-map) {
+    &.justify-#{$j} {
+      justify-content: map-get($justify-map, $j);
+    }
+  }
+}

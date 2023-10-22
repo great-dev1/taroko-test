@@ -1,0 +1,7 @@
+@import 'variables', 'mixins';
+
+@each $bg in map-keys($surface-map) {
+  .bg-surface-#{$bg} {
+    background: map-get($surface-map, $bg);
+  }
+}

@@ -1,0 +1,44 @@
+@import 'variables';
+
+.root {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100svh;
+  z-index: 2000;
+  background: #fafafa;
+
+  &.open {
+    display: none;
+  }
+
+  .content {
+    max-width: 80vw;
+    min-width: 40vw;
+    max-height: 80svh;
+    min-height: 50svh;
+    padding: $spacing-4 $spacing-4 $spacing-3 $spacing-4;
+    background: #AAA;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      flex: 0;
+      padding-top: $spacing-1;
+      padding-bottom: $spacing-1;
+    }
+    .main {
+      flex: 1;
+      padding-top: $spacing-1;
+      padding-bottom: $spacing-1;
+    }
+    .footer {
+      flex: 0;
+      padding-top: $spacing-1;
+      padding-bottom: $spacing-1;
+    }
+  }
+}
